@@ -42,21 +42,27 @@ Your answers should be present in static String array `answers` in `A1` class wh
 
 #### Example:
 
-Consider the below example,
+Consider the below example program (in TACojava form),
       
 ```java
 class P1 {
-    void m1() {
-    A x,y;
+    public static void main(String[] args) {
+    A x;
+    A y;
     x = new A();
     y = new A();
     x.foo();
     y.foo(); 
   }
 	
-  void m2() {
-    A a,b,z;
-    boolean c = true;
+  public int m2() {
+    A a;
+    A b;
+    A z;
+    int ret;
+    boolean c;
+    ret = 0;
+    c = true;
     a = new A();
     b = new A();
     if(c)
@@ -64,13 +70,16 @@ class P1 {
     else
       z = b;
     z.foo();
+    return ret;
   } 
 }
 
 class A{
-  void foo() {
-    int i = 10;
+  public int foo() {
+    int i;
+    i = 10;
     System.out.println(i);
+    return i;
   }
 }
 ```
@@ -78,7 +87,7 @@ class A{
 The Queries
       
 ```
-P1:m1:x alias y
+P1:main:x alias y
 P1:m2:a alias z
 P1:m2:a alias b
 P1:m2:b alias z
